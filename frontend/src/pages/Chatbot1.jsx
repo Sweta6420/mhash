@@ -91,9 +91,11 @@ const Chatbot1 = () => {
   
 
   return (
-    <div className="chatbot-container" >
-      <div className="chatbot-container-1" style={{ position:"relative", height: "80vh", width: "80vw", padding: "5px"}}>
-        <MainContainer>
+    // <div className="" >
+    //   <div className="" style={{ position:"relative", height: "80vh", width: "80vw", padding: "5px"}}>
+      <div className='qwerty-123'>
+        <MainContainer className='padding-12'>
+          
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
@@ -107,8 +109,18 @@ const Chatbot1 = () => {
             <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
           </ChatContainer>
         </MainContainer>
+        <div className='resources-12'><h1>Resources</h1>
+      <h3>Books</h3>
+        <a href='https://www.indiebound.org/book/9780062364814'><u>Ends of the World</u></a><br></br><br></br>
+        <h3>Articles</h3>
+        <a href='https://www.unicef.org/environment-and-climate-change'><u>Climate change and environment</u></a><br></br><br></br>
+        <h3>Meditation</h3>
+        <p>Zen Meditation for Beginners by Bonnie Myotai Treace</p>
+        <p>The No-Nonsense Meditation Book by Steven Laureys, MD</p>
+        </div>
       </div>
-    </div>
+    // {/* //   </div>
+    // // </div> */}
   )
 }
 

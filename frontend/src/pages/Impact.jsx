@@ -1,10 +1,34 @@
 import carData from '../features/data/carData'; 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../index.css';
+// import axios from 'axios'
 
-
-
-function TransportationScoreCalculator() {
+// import {
+//     Chart,
+//     ChartTitle,
+//     ChartTooltip,
+//     ChartXAxis,
+//     ChartXAxisItem,
+//     ChartYAxis,
+//     ChartYAxisItem,
+//     ChartSeries,
+//     ChartSeriesItem,
+//   } from "@progress/kendo-react-charts";
+//   import "hammerjs";
+//   import data from "./scatter-line-data.json";
+  
+function TransportationScoreCalculator() 
+{
+    const [oldUserDataScore,setOldUserDataScore] = useState([{}])
+    useEffect(() => {
+        // Fetch data when the component mounts
+        fetch('/api/endpoint/')
+          .then((response) => response.json())
+          .then((data) => {
+            setOldUserDataScore(...data);
+          })
+          .catch((error) => console.error('Error fetching data:', error));
+      }, []);
     const [state, setState] = useState({
         vehicleType: '',
         drivenDistance: '',
@@ -16,64 +40,78 @@ function TransportationScoreCalculator() {
 
     const calculateTransportationScore = () => {
         const {
-            vehicleType,
-            drivenDistance,
-            carpooling,
-            fuelType,
-            carBrand,
+          vehicleType,
+          drivenDistance,
+          carpooling,
+          fuelType,
+          carBrand,
         } = state;
-
+      
         const efficiencyValues = {
-            bike: 65,
-            car: 25,
-            scooter: 50,
-            bus: 5,
-            train: 4,
-            plane: 0.384,
+          bike: 65,
+          car: 25,
+          scooter: 50,
+          bus: 5,
+          train: 4,
+          plane: 0.384,
         };
-
+      
         const capacityValues = {
-            bike: 2,
-            scooter: 2,
-            car: 8,
-            bus: 50,
-            train: 650,
-            plane: 500,
+          bike: 2,
+          scooter: 2,
+          car: 8,
+          bus: 50,
+          train: 650,
+          plane: 500,
         };
-
+      
         const emissionValues = {
-            bike: 103,
-            scooter: 90,
-            car: 140,
-            bus: 105,
-            train: 80,
-            plane: 255,
+          bike: 0.9,
+          scooter: 0.8,
+          car: 1.0,
+          bus: 0.4,
+          train: 0.15,
+          plane: 2.5,
         };
-
+      
         const vehicleTypes = {
-            diesel: 0.6,
-            petrol: 0.7,
-            cng: 0.8,
-            hybrid: 0.9,
-            ev: 1.0,
+          diesel: 0.6,
+          petrol: 0.7,
+          cng: 0.8,
+          hybrid: 0.9,
+          ev: 1.0,
         };
+      
         const carpoolFactor = carpooling === 'yes' ? 1 : 0.9;
-
+      
         let fuelEfficiency = efficiencyValues[vehicleType];
-        if (fuelType === 'ev') {
-            fuelEfficiency = carData.ev[carBrand] / 8.9;
+      
+        if (carBrand && carData[fuelType] && carData[fuelType][carBrand]) {
+          fuelEfficiency = carData[fuelType][carBrand];
+        }
+      
+        const effective = (fuelEfficiency * capacityValues[vehicleType]) / drivenDistance + emissionValues[vehicleType];
+        const impact = effective * (vehicleTypes[fuelType] || 1.0) * carpoolFactor;
+      
+        setState({ ...state, score: impact.toFixed(2) });
+    }
+        const normalizeScore = (score) => {
+            const minScore = 0; // Replace with the actual minimum score
+            const maxScore = 201; // Replace with the actual maximum score
+            return (score - minScore) / (maxScore - minScore) * 100;
         }
 
-        const effective =
-            (fuelEfficiency * capacityValues[vehicleType] - emissionValues[vehicleType] / capacityValues[vehicleType]) /
-            drivenDistance;
-
-        const impact = effective * (vehicleTypes[fuelType] || 1.0) * carpoolFactor;
-
-        setState({ ...state, score: impact.toFixed(2) });
-    };
-
-    return (
+        
+        // oldUserDataScore.user.transport = normalizeScore(state.score);
+        // axios.post('/api/endpoint', oldUserDataScore)
+        //     .then((response) => {
+        //     console.log('Data posted successfully:', response.data);
+        //     })
+        //     .catch((error) => {
+        //     console.error('Error:', error);
+        //     });
+        
+        return (
         <div className="container-impact-class">
             <h1 className='transportation-score-h1-class'>Transportation Score Calculator</h1>
             <select
@@ -159,9 +197,9 @@ function TransportationScoreCalculator() {
             )}
 
             <button id="calculate-button" className='select-input-button-impact button-impact'onClick={calculateTransportationScore}>
-                Calculate Score
+                Submit
             </button>
-            <p id="score" className='transportation-score-impact'>Transportation Score = {state.score}</p>
+            <p id="score" className='transportation-score-impact'>Transportation Score = {normalizeScore(state.score)}</p>
         </div>
     );
 }

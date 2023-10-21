@@ -28,13 +28,27 @@ function Dashboard() {
         title: {
           display: true,
           text: "Years", // Label for X axis
+          font: {
+            size:16,
+            weight: 'bold'
+          }
         },
+        grid:{
+          color: 'white',
+        }
       },
       y: {
         title: {
           display: true,
           text: "CO2 Level (ppm)", // Label for Y axis
+          font: {
+            size:16,
+            weight: 'bold'
+          }
         },
+        grid:{
+          color: 'white',
+        }
       },
     },
   };
@@ -58,13 +72,29 @@ function Dashboard() {
         title: {
           display: true,
           text: "Years", // Label for X axis
+          font: {
+            size:16,
+            weight: 'bold',
+            color: 'white'
+          }
         },
+        grid:{
+          color: 'white',
+        }
       },
       y: {
         title: {
           display: true,
           text: "Methane Level (ppb)", // Label for Y axis
+          font: {
+            size:16,
+            weight: 'bold',
+            color: 'white'
+          }
         },
+        grid:{
+          color: 'white',
+        }
       },
     },
   };
@@ -119,7 +149,7 @@ function Dashboard() {
           <div className="list">
             <div className="today-weather">
               <div className="todaymon">Today(Sun)</div>
-              <div className="mar-6">Oct 6</div>
+              <div className="mar-6">Oct 23</div>
               <img className="sunny-color-icon" alt="" src="../images/sun.png" />
 
               <div className="sunny">Sunny</div>
@@ -128,7 +158,7 @@ function Dashboard() {
             </div>
             <div className="today-weather">
               <div className="todaymon">Mon</div>
-              <div className="mar-6">Oct 7</div>
+              <div className="mar-6">Oct 24</div>
               <img className="sunny-color-icon" alt="" src="../images/cloud.png" />
 
               <div className="sunny">Cloudy</div>
@@ -137,16 +167,16 @@ function Dashboard() {
             </div>
             <div className="today-weather">
               <div className="todaymon">Tue</div>
-              <div className="mar-6">Oct 8</div>
-              <img className="sunny-color-icon" alt="" src="../images/lightning.png" />
+              <div className="mar-6">Oct 25</div>
+              <img className="sunny-color-icon" alt="" src="../images/sun.png" />
 
-              <div className="sunny">Lightning</div>
+              <div className="sunny">Sunny</div>
               <div className="div">17-20℃</div>
               <div className="aqi-67">AQI 65</div>
             </div>
             <div className="today-weather">
               <div className="todaymon">Wed</div>
-              <div className="mar-6">Oct 9</div>
+              <div className="mar-6">Oct 26</div>
               <img className="sunny-color-icon" alt="" src="../images/heavy.png" />
 
               <div className="sunny">Heavy rain</div>
@@ -185,12 +215,12 @@ function Dashboard() {
       <div className="group-child"></div>
       <div className="i-dont-feel-container">
         <p className="i-dont-feel-good-about-the-wo">
-          <span className="i-dont-feel">I don't feel good about the world </span>
+          <span className="i-dont-feel">I want to feel better </span>
           <span>&nbsp;</span>
         </p>
         <p className="i-dont-feel-good-about-the-wo">
           <span>
-            <span className="click-here-to"><Link to='/help'>Click here to get help</Link></span>
+            <span className="click-here-to"><Link to='/help'>Let us help you</Link></span>
           </span>
         </p>
       </div>
@@ -228,13 +258,14 @@ function Dashboard() {
         </div>
       </div>
     </div>
-      <br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
 
-      {/* <LineChart chartData={co2Global} options={option1}/>
-      <LineChart chartData={methGlobal} options={option2}/> */}
-      {/* <LineChart chartData={methGlobal} options={option2} /> */}
-
-      <div className="chart-card">
+    {/* <LineChart chartData={co2Global} options={option1}/>
+    <LineChart chartData={methGlobal} options={option2}/> */}
+    {/* <LineChart chartData={methGlobal} options={option2} /> */}
+    <h1> { showCO2Chart ? ('Graph showing average monthly CO2 levels over the years') : ('Graph showing average Methane levels over the years' )}</h1>
+    <br /><br /><br />
+    <div className="chart-card">
       <div className="options">
         <button onClick={showCO2} className={`btn-chart ${showCO2Chart && 'active'}`}>
           CO2
@@ -243,6 +274,7 @@ function Dashboard() {
           Methane
         </button>
       </div>
+      <br></br><br></br>
       <div className="chart-container">
         {showCO2Chart ? (
           <LineChart chartData={co2Global} options={option1} />
@@ -250,8 +282,9 @@ function Dashboard() {
           <LineChart chartData={methGlobal} options={option2} />
         )}
       </div>
-      <Announcements />
     </div>
+    <br /><br /><br /><br /><br /><br /><br />
+      <Announcements />
     </>
   )
 }

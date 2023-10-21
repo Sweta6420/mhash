@@ -25,15 +25,15 @@ const carData = {
         "Hyundai i20":20
     },
     "ev":{
-        "Tata Tigor":315, 
-        "MG ZS":461,
-        "Hyundai Kona":452,
-        "Tata Nexon":465,
-        "MG Comet":230,
-        "Tata Tiago":315,
-        "Citroen E-C3":320,
-        "Hyundai Ioniq 5":631,
-        "BMW i3":145
+        "Tata Tigor":35.4, 
+        "MG ZS":57.8,
+        "Hyundai Kona":50.8,
+        "Tata Nexon":52.2,
+        "MG Comet":25.8,
+        "Tata Tiago":35.4,
+        "Citroen E-C3":35.9,
+        "Hyundai Ioniq 5":70.9,
+        "BMW i3":70.89
     },
     "evcharge":{
         "Tata Tigor":26, 
@@ -58,17 +58,6 @@ const carData = {
         "Maruti Baleno":27.39,
         "Maruti Dzire":28.4   
     },
-    "hybrid":{
-        "Tata Tigor":315,
-        "MG ZS":461,
-        "Hyundai Kona":452,
-        "Tata Nexon":465,
-        "MG Comet":230,
-        "Tata Tiago":315,
-        "Citroen E-C3":320,
-        "Hyundai Ioniq 5":631,
-        "BMW i3":145
-    }
 }
 
 export default carData;

@@ -16,6 +16,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/goals', require('./routes/goalRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/posts',require('./routes/postRoutes'));
+app.use('/api/scores',require('./routes/scoreRoutes'));
+app.get('/api/endpoint', (req, res) => {
+  res.send('Hello from the backend!');
+});
+app.post('/api/endpoint', (req, res) => {
+  console.log('Received data:', req.body);
+  res.json({ message: 'Data received and processed on the backend.' });
+});
 
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {

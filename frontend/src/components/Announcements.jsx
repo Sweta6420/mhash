@@ -3,16 +3,16 @@ import '../index.css';
 
 const announcementsData = [
     {
-      announcement:'Join us in raising awareness about climate change.',
-      link:'https://www.google.com'
+      announcement:'Raising awareness on climate change and health',
+      link:'https://www.who.int/europe/activities/raising-awareness-on-climate-change-and-health'
     },
     {
-      announcement:'Stay tuned for updates on the G20 summit discussions.',
-      link:'https://www.google.com'
+      announcement:'G20 Summit 2023 LIVE: President of \'Bharat\' dinner invitations triggers row, Opposition slams Centre.',
+      link:'https://www.cnbctv18.com/india/g20-summit-2023-in-delhi-live-updates-police-traffic-list-of-metro-stations-closed-road-railway-routes-joe-biden-xi-jinping-russia-narendra-modi-17707921.htm'
     },
     {
-      announcement:'COP 27 summit is approaching; get ready for action!.',
-      link:'https://www.google.com'
+      announcement:'COP27: Key Takeaways and What’s Next',
+      link:'https://www.wri.org/insights/cop27-key-outcomes-un-climate-talks-sharm-el-sheikh'
     },
    {
       announcement:'Antarctica in crisis: Ice shelves shrinking fast with no sign of recovery.',

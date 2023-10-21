@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import "../index.css";
 function Leaderboard(){
     const [activeButton, setActiveButton] = useState(null);
@@ -7,12 +9,27 @@ function Leaderboard(){
     const handleButtonClick = (buttonName) => {
       setActiveButton(buttonName);
     };
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { user } = useSelector((state) => state.auth)
+    
+  
+    useEffect(() => {
+      
+  
+      if (!user) {
+        navigate('/login')
+      }
+  
+      
+    }, [user, navigate])
 
     return(
        <>
         <div class="macbook-air-8">
 
       <div className="rectangle-parentt">
+        <h1 className='leaderboard-heading'>LeaderBoard</h1>
         <div className="frame-childd">
         <div className='buttongroup'>
         <button
@@ -46,20 +63,21 @@ function Leaderboard(){
         <button className="national">National</button> */}
 
         <div className="rectangle-divv"></div>
-        <b className="b">1674</b>
+        {/* <b className="b">1034</b> */}
         <div className="frame-childd1"></div>
-        <div className="ruben">Ruben</div>
-        <b className="b1">3056</b>
-        <div className="jacob">Jacob</div>
+        <div className="ruben">urza</div>
+        {/* <b className="b1">1034</b> */}
+        <div className="jacob">urza</div>
         <img className="rectangle-icon1" alt="" src="./images/Rectangle.png" />
 
-        <div className="matthew">Matthew</div>
-        <b className="b2">1847</b>
+        <div className="matthew">urza</div>
+        {/* <b className="b2">1034</b> */}
         <img className="ellipse-icon" alt="" src="./images/Ellipse9.png" />
 
-        <div className="username">@username</div>
-        <div className="username1">@username</div>
-        <div className="username2">@username</div>
+        <div className="username">urza@g.com</div>
+        <div className="username1">urza@g.com</div>
+        <div className="username2">urza@g.com
+        </div>
         <img className="frame-childd2" alt="" src="./images/Ellipse10.png" />
       </div>
       {/* <img className="vector-icon" alt="" src="./public/vector.svg" /> */}
@@ -87,23 +105,22 @@ function Leaderboard(){
         alt=""
         src="./images/Ellipse8.png"
       />
-
-      <div className="clifford">Clifford</div>
-      <div className="tara">Tara</div>
-      <div className="pascal">Pascal</div>
-      <div className="quincy">Quincy</div>
-      <div className="oilver">Oilver</div>
-      <b className="b3">1134</b>
+      <div className="clifford">urza</div>
+      <div className="tara">urza</div>
+      <div className="pascal">urza</div>
+      <div className="quincy">urza</div>
+      <div className="oilver">urza</div>
+      {/* <b className="b3">1134</b>
       <b className="b4">845</b>
       <b className="b5">760</b>
       <b className="b6">734</b>
-      <b className="b7">544</b>
-      <div className="username3">@username</div>
-      <div className="username4">@username</div>
-      <div className="username5">@username</div>
-      <div className="username6">@username</div>
-      <div className="username7">@username</div>
-      <img className="polygon-icon" alt="" src="./images/Polygon1.png" />
+      <b className="b7">544</b> */}
+      <div className="username3">urza@g.com</div>
+      <div className="username4">urza@g.com</div>
+      <div className="username5">urza@g.com</div>
+      <div className="username6">urza@g.com</div>
+      <div className="username7">urza@g.com</div>
+      {/* <img className="polygon-icon" alt="" src="./images/Polygon1.png" />
 
       <img className="macbook-air-8-child4" alt="" src="./images/Polygon2.png" />
 
@@ -111,7 +128,7 @@ function Leaderboard(){
 
       <img className="macbook-air-8-child6" alt="" src="./images/Polygon1.png" />
 
-      <img className="macbook-air-8-child7" alt="" src="./images/Polygon2.png" />
+      <img className="macbook-air-8-child7" alt="" src="./images/Polygon2.png" /> */}
 
       <div className="line-div"></div>
       <div className="macbook-air-8-child8"></div>
