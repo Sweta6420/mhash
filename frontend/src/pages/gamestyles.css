@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.container {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    color: white;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#message {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#next-button {
+    background-color: #27ae60;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#options button {
+    width: 100%;
+}
+.macbook-air-15 {
+    position: absolute;
+    background: linear-gradient(
+        90deg,
+        rgba(48, 162, 197, 0.48),
+        rgba(255, 255, 255, 0.5)
+    ),
+    #ac7aff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: var(--font-size-31xl);
+    color: var(--color-black);
+    font-family: var(--font-archivo);
+    border-radius: 0;
+  }

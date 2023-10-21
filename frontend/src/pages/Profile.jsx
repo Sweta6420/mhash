@@ -38,6 +38,24 @@ function Profile() {
     return <Spinner />
   }
 
+  const checklistItems = [
+    'Saved Electricity',
+    'Saved Water',
+    'Used Public Transport',
+    'Used Eco-Friendly Bag',
+    'Buy Energy Efficient Products',
+    'Drive Less, Walk More',
+    'Reduce Single-Use Plastics',
+    'Reduce Paper Usage',
+    'Use Renewable Energy',
+  ]
+  function getRandomItems(array, count) {
+    const shuffled = array.sort(() => 0.5 - Math.random()); // Shuffle the array
+    return shuffled.slice(0, count); // Get the first 5 items
+  }
+  const randomChecklist = getRandomItems(checklistItems, 5);
+  
+  console.log(randomChecklist); 
   return (
     <>
       <section className='heading'>
@@ -51,26 +69,12 @@ function Profile() {
         <div className="eco-check-list">
             <div className="eco-checklist-for-container">
                 <p className="eco-checklist-for"><h1 className='eco-check-white'>Eco Checklist for the day</h1></p>
-                <label className="checkbox-container">
-                    Saved Electricity
+                {randomChecklist.map((item) => (
+                    <label className="checkbox-container">{item}
                     <input type="checkbox" className="checkbox" id="saved-electricity" />
-                    <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                    Saved Water
-                    <input type="checkbox" className="checkbox" id="saved-water" />
-                    <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                    Used Public Transport
-                    <input type="checkbox" className="checkbox" id="public-transport" />
-                    <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                    Used Eco-Friendly Bag
-                    <input type="checkbox" className="checkbox" id="eco-bag" />
-                    <span className="checkmark"></span>
-                </label>
+                   <span className="checkmark"></span>
+               </label>
+                ))}
             </div>
 
             <div className="badges"><h1>Badges</h1></div>

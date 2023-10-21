@@ -149,11 +149,11 @@ h3 {
 
 .goals {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-.goal {
+/* .goal {
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
@@ -168,6 +168,46 @@ h3 {
   cursor: pointer;
   border: none;
   background: none;
+} */
+
+.goal {
+  background-color: #fff;
+  margin: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.goal .post-image {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+
+.goal .info {
+  padding: 15px;
+}
+
+.goal .info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.goal .info .date {
+  color: #777;
+}
+
+.goal .close {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #ff0000;
+  font-size: 1.2rem;
 }
 
 .form,
@@ -591,7 +631,7 @@ h3 {
   }
   .quote-of-the-container {
     position: absolute;
-    top: 28px;
+    top: 20px;
     left: 30px;
     letter-spacing: -0.04em;
     line-height: 101.52%;
@@ -751,7 +791,7 @@ h3 {
   }
   .ba {
     text-transform: uppercase;
-    color: green;
+    color: #05d70c;
   }
   .there-is-no-container {
     position: relative;
@@ -1346,24 +1386,24 @@ h3 {
   }
   .silver-medal-icon {
     position: absolute;
-    top: 280.22px;
-    left: 853.22px;
-    width: 135.97px;
-    height: 177.71px;
+    top: 276.22px;
+    left: 858.22px;
+    width: 108.776px;
+    height: 142.168px; 
   }
   .bronze-medal-icon {
     position: absolute;
-    top: 274.22px;
-    left: 1018.22px;
-    width: 135.97px;
-    height: 183.71px;
+    top: 276.22px;
+    left: 1025.22px;
+    width: 108.776px; 
+  height: 144.168px; 
   }
   .gold-medal-icon {
     position: absolute;
-    top: 280.22px;
-    left: 1200.22px;
-    width: 135.97px;
-    height: 177.71px;
+    top: 276.22px;
+    left: 1194.22px;
+    width: 108.776px; 
+  height: 142.168 px; 
   }
   .eco-checklist-for {
     margin: 0;
@@ -2298,29 +2338,292 @@ button {
   position: relative;
   margin-top: -68px;
   line-height: normal;
-  /* background: linear-gradient(
-    90deg,
-    rgba(132, 35, 208, 0.48),
-    rgba(255, 122, 0, 0.5)
-  ); */
-  /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
-  /* width: 100%; */
   height: 730px;
   overflow: hidden;
   text-align: left;
-  /* font-size: var(--font-size-sm); */
   color: var(--color-white);
-  /* font-family: var(--font-inter); */
 }
 .hi{
-  /* position: absolute;
-  top: 96px;
-  left: 110px;
-  font-weight: 500;
-  display: inline-block;
-  width: 50px;
-  height: 18px; */
   position:relative;
   left:13%;
 }
 
+.container-impact-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 100vh;
+  color: #000; 
+}
+
+.transportation-score-h1-class{
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.select-input-button-impact{
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.select-input-impact{
+  background-color: #f8f8f8; 
+}
+
+.button-impact{
+  background-color: #0070c0; /* Button background color */
+  color: #fff; /* Button text color */
+}
+
+.transportation-score-impact{
+  font-size: 18px;
+}
+
+.chatbot-container{
+  background-color: rgba(255, 255, 255,0.5);
+  height: 80vh;
+  width: 80vw;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.chatbot-container-1{
+  background-color: rgba(255, 255, 255,0.5) !important;
+  border-radius: 5px;
+}
+.main-section-chatbot{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.bottom-section-chatbot{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container-chatbot{
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+.input-chatbot{
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  padding: 12px 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.05) 0 54px 55px,
+      rgba(0,0,0,0.05) 0 -12px 30px,
+      rgba(0,0,0,0.05) 0 4px 6px,
+      rgba(0,0,0,0.05) 0 12px 3px,
+      rgba(0,0,0,0.05) 0 -3px 5px;
+  font-size: 20px;
+}
+.input-chatbot:focus{
+  outline: none;
+}
+#submit-chatbot{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+.info-chatbot{
+  color: rgba(0, 0, 0,0.8);
+  font-size: 12px;
+  padding: 10px;
+}
+
+
+.announcements-banner {
+  position: fixed;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  right: 10px; /* Adjust the distance from the right as needed */
+  background-color: #0074D9;
+  color: #fff !important;
+  text-align: center;
+  padding: 10px;
+  animation: change-text 5s infinite alternate; /* Change text every 5 seconds */
+  border-radius: 5px; /* Add rounded corners */
+  max-width: 250px; /* Limit the width to control the rectangle size */
+  overflow: hidden; /* Hide overflowing text */
+
+  /* Add more styles to customize the appearance */
+}
+
+@keyframes change-text {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25%, 75% {
+    transform: translateY(-100%);
+  }
+}
+
+
+.profile {
+  text-align: center;
+}
+
+.user-info {
+  margin: 20px;
+}
+
+.user-name {
+  font-size: 24px;
+}
+
+.instagram-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.post-card {
+  width: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  background-color: black; /* Set background color to black */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color:white;
+}
+
+.post-content {
+  padding: 10px;
+  color: black; /* Set content text color to white */
+}
+
+h3 {
+  font-size: 20px;
+  color: black; /* Set heading text color to white */
+}
+
+
+.content-text {
+  font-size: 14px;
+  line-height: 1.4; /* Set a consistent line height for uniform spacing */
+  margin: 10px 0;
+  color: white;
+}
+.content-text-popup{
+  font-size: 14px;
+  line-height: 1.4; /* Set a consistent line height for uniform spacing */
+  margin: 10px 0;
+  color: black;
+}
+.author-name {
+  font-size: 12px;
+  color: white; /* Set author name text color to white */
+}
+h3 {
+  font-size: 20px;
+}
+
+.content-text {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 0;
+  
+}
+
+.author-name {
+  font-size: 12px;
+}
+.author-name-popup{
+  font-size: 12px;
+  color: black;
+}
+.expandedPosts {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  color: black;
+  text-align: left;
+}
+
+.expanded-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.expanded-header h3 {
+  font-size: 24px;
+}
+
+.expanded-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-content{
+  display: flex;
+  flex-direction: row;
+}
+.expanded-header button:hover {
+  color: red;
+}
+
+.expanded-body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.lineChart .x-axis-label{
+  fill: white;
+}
+.lineChart .y-axis-label{
+  fill: white;
+}
+.popup{
+  color: black;
+}
+
+.popup-body
+{
+  color: black;
+}
+
+/* Add a style to make the "Close" button text black */
+.popup button {
+  color: black;
+}

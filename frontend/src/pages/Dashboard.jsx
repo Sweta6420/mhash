@@ -7,6 +7,7 @@ import LineChart from '../components/LineChart';
 import { CO2Global } from "../features/data/CO2GlobData";
 import { MethaneGlobal } from "../features/data/MethaneGlobData";
 import '../index.css'
+import Announcements from '../components/Announcements';
 function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -118,7 +119,7 @@ function Dashboard() {
           <div className="list">
             <div className="today-weather">
               <div className="todaymon">Today(Sun)</div>
-              <div className="mar-6">Mar 6</div>
+              <div className="mar-6">Oct 6</div>
               <img className="sunny-color-icon" alt="" src="../images/sun.png" />
 
               <div className="sunny">Sunny</div>
@@ -127,7 +128,7 @@ function Dashboard() {
             </div>
             <div className="today-weather">
               <div className="todaymon">Mon</div>
-              <div className="mar-6">Mar 7</div>
+              <div className="mar-6">Oct 7</div>
               <img className="sunny-color-icon" alt="" src="../images/cloud.png" />
 
               <div className="sunny">Cloudy</div>
@@ -136,7 +137,7 @@ function Dashboard() {
             </div>
             <div className="today-weather">
               <div className="todaymon">Tue</div>
-              <div className="mar-6">Mar 8</div>
+              <div className="mar-6">Oct 8</div>
               <img className="sunny-color-icon" alt="" src="../images/lightning.png" />
 
               <div className="sunny">Lightning</div>
@@ -145,7 +146,7 @@ function Dashboard() {
             </div>
             <div className="today-weather">
               <div className="todaymon">Wed</div>
-              <div className="mar-6">Mar 9</div>
+              <div className="mar-6">Oct 9</div>
               <img className="sunny-color-icon" alt="" src="../images/heavy.png" />
 
               <div className="sunny">Heavy rain</div>
@@ -189,7 +190,7 @@ function Dashboard() {
         </p>
         <p className="i-dont-feel-good-about-the-wo">
           <span>
-            <span className="click-here-to"><Link to='/'>Click here to get help</Link></span>
+            <span className="click-here-to"><Link to='/help'>Click here to get help</Link></span>
           </span>
         </p>
       </div>
@@ -249,6 +250,7 @@ function Dashboard() {
           <LineChart chartData={methGlobal} options={option2} />
         )}
       </div>
+      <Announcements />
     </div>
     </>
   )

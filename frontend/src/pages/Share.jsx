@@ -62,7 +62,7 @@ function Share() {
         </div>
       </section>
 
-      <section className='content'>
+      <section className='goal'>
         {filteredPosts.length > 0 ? (
           <div className='posts'>
             {filteredPosts.map((post) => (

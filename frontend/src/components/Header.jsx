@@ -43,10 +43,13 @@ function Header() {
           <Link to='/profile'>Profile</Link>
         </li>
         <li>
-          <Link to='/'>Discussions</Link>
+          <Link to='/leaderboard'>Leaderboard</Link>
         </li>
         <li>
-          <Link to='/leaderboard'>Leaderboard</Link>
+          <Link to='/impact'>Impact</Link>
+        </li>
+        <li>
+          <Link to='/games'>Games</Link>
         </li>
         {user ? (
           <li>

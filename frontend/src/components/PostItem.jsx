@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deletePost } from '../features/posts/postSlice'
 
 function PostItem({ post }) {
   const dispatch = useDispatch()
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  const handlePostClick = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+    } else {
+      setIsExpanded(true);
+    }
+  };
 
   return (
     <div className='goal'>

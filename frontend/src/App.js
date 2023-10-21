@@ -9,6 +9,10 @@ import Share from './pages/Share'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
 import Impact from './pages/Impact'
+import Chatbot1 from './pages/Chatbot1'
+import Games from './pages/Games'
+import Binit from './pages/Binit'
+import Quizup from './pages/Quizup'
 function App() {
   return (
     <>
@@ -24,6 +28,10 @@ function App() {
             <Route path='/profile' element={<Profile />} />
             <Route path='/leaderboard' element={<Leaderboard />} />
             <Route path='/impact' element={<Impact />} />
+            <Route path='/help' element={<Chatbot1 />} />
+            <Route path='/games' element={<Games />} />
+            <Route path='/binit' element={<Binit />} />
+            <Route path='/quizup' element={<Quizup />} />
           </Routes>
         {/* </div> */}
         </div>
